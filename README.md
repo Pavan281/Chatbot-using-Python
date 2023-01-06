@@ -1,26 +1,13 @@
-# Chatbot-using-Python
-AI based Chatbot using Python
-from flask import Flask, render_template, request
-from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
+Chatbot using Python:
+My first academic project under Project Exhibition 1
 
-app = Flask(__name__)
+Description:
 
-english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
-trainer = ChatterBotCorpusTrainer(english_bot)
-trainer.train("chatterbot.corpus.english")
+Public can use the ChatBot static one to query COVID-19 specific information like nearby hospitals, basic medicines to be used, provide information about emergency contact phone numbers, etc.
 
+Outputs:
+GUI Output:
+image image
+AI Output:
 
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/get")
-def get_bot_response():
-    userText = request.args.get('msg')
-    return str(english_bot.get_response(userText))
-
-
-if __name__ == "__main__":
-    app.run()
+image
